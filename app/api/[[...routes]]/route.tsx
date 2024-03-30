@@ -4,7 +4,8 @@ import { Button, Frog, TextInput, parseEther } from "frog";
 import { handle } from "frog/next";
 import { createWalletClient, http, createPublicClient } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
-import { baseSepolia } from "viem/chains";
+// import { baseSepolia } from "viem/chains";
+import { lineaSepolia } from "./linea-chain";
 import { PinataFDK } from "pinata-fdk";
 import abi from "./abi.json";
 
@@ -18,13 +19,13 @@ const CONTRACT = process.env.CONTRACT_ADDRESS as `0x` || ""
 const account = privateKeyToAccount((process.env.PRIVATE_KEY as `0x`) || "");
 
 const publicClient = createPublicClient({
-  chain: baseSepolia,
+  chain: lineaSepolia,
   transport: http(process.env.ALCHEMY_URL),
 });
 
 const walletClient = createWalletClient({
   account,
-  chain: baseSepolia,
+  chain: lineaSepolia,
   transport: http(process.env.ALCHEMY_URL),
 });
 
