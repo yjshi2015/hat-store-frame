@@ -39,6 +39,7 @@ async function checkBalance(address: any) {
       args: [address, 0],
     });
     const readableBalance = Number(balance);
+    console.log(`checkBalance=========================: ${readableBalance}`);
     return readableBalance;
   } catch (error) {
     console.log(error);
@@ -54,6 +55,7 @@ async function remainingSupply() {
       functionName: "totalSupply",
     });
     const readableBalance = Number(balance);
+    console.log(`remainingSupply=========================: ${readableBalance}`);
     return readableBalance;
   } catch (error) {
     console.log(error);
